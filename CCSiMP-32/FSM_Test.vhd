@@ -64,9 +64,6 @@ ARCHITECTURE behavior OF FSM_Test IS
    signal O_FSM_EX : std_logic;
    signal O_FSM_ME : std_logic;
    signal O_FSM_WB : std_logic;
-
-   -- Clock period definitions
-   constant I_FSM_CLK_period : time := 10 ns;
  
 BEGIN
  
@@ -82,26 +79,21 @@ BEGIN
           O_FSM_WB => O_FSM_WB
         );
 
-   -- Clock process definitions
-   I_FSM_CLK_process :process
-   begin
-		I_FSM_CLK <= '0';
-		wait for I_FSM_CLK_period/2;
-		I_FSM_CLK <= '1';
-		wait for I_FSM_CLK_period/2;
-   end process;
- 
-
    -- Stimulus process
    stim_proc: process
    begin		
       -- hold reset state for 100 ns.
       wait for 100 ns;	
 
-      wait for I_FSM_CLK_period*10;
-
       -- insert stimulus here 
-
+		I_FSM_EN <= '1';
+		
+		for i in 0 to 100 loop
+			I_FSM_CLK <= '0';
+			wait for 20 ns;
+			I_FSM_CLK <= '1';
+			wait for 20 ns;
+		end loop;
       wait;
    end process;
 

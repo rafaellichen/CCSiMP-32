@@ -13,7 +13,7 @@ entity FSM is
 end FSM;
 
 architecture Behavioral of FSM is
-	signal state : STD_LOGIC_VECTOR (2 downto 0) := "000";
+	signal state : STD_LOGIC_VECTOR (2 downto 0) := "001";
 begin
 	process (I_FSM_CLK,I_FSM_EN,I_FSM_END)
 	begin
@@ -25,7 +25,7 @@ begin
 		-- begin FSM
 		if rising_edge(I_FSM_CLK) and I_FSM_EN = '1' then
 			-- for end state
-			if I_FSM_END = x"00000000" then
+			if I_FSM_END = '1' then
 				state <= "000";
 			end if;
 			-- begin 1st state: IF

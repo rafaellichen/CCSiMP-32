@@ -1,3 +1,9 @@
+*.exe
+*.wdb
+*.log
+*.xmsgs
+*.cmd
+isim
 *.gise
 *.xise
 *.ini
