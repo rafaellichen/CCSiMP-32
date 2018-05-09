@@ -39,7 +39,10 @@ end MUX32;
 architecture Behavioral of MUX32 is
 
 begin
-
+	process (I_MUX32_CTL, I_MUX32_A, I_MUX32_B)
+	begin
+		
+	end process;
 
 end Behavioral;
 

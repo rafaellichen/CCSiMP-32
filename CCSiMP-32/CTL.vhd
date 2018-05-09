@@ -36,7 +36,7 @@ begin
 			O_CTL_ALUOp <= "10";
 			O_CTL_MemWrite <='0';
 			O_CTL_ALUSrc <='0';
-			O_CTL_RegWrite <='1';s
+			O_CTL_RegWrite <='1';
 		end if;
 		
 	-- addi:
