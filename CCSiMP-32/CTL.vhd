@@ -47,107 +47,107 @@ begin
 			O_CTL_Jump <= '0';
 			O_CTL_Beq <= '0';
 			O_CTL_Bne <= '0';
-			O_DEC_MemRead <= '0';
-			O_DEC_MemtoReg <='0';
-			O_DEC_ALUOp <= "10";
-			O_DEC_MemWrite <='0';
-			O_DEC_ALUSrc <='0';
-			O_DEC_RegWrite <='1';
+			O_CTL_MemRead <= '0';
+			O_CTL_MemtoReg <='0';
+			O_CTL_ALUOp <= "10";
+			O_CTL_MemWrite <='0';
+			O_CTL_ALUSrc <='0';
+			O_CTL_RegWrite <='1';
 		end if;
 		
 	-- addiu:
 	-- opcode = 001001
 	-- aluop = 10
-		if I_DEC_Opcode = "001001" then
-			O_DEC_RegDst <= '1';
-			O_DEC_Jump <= '0';
-			O_DEC_Beq <= '0';
-			O_DEC_Bne <= '0';
-			O_DEC_MemRead <= '0';
-			O_DEC_MemtoReg <='0';
-			O_DEC_ALUOp <= "10";
-			O_DEC_MemWrite <='0';
-			O_DEC_ALUSrc <='0';
-			O_DEC_RegWrite <='1';
+		if I_CTL_Opcode = "001001" then
+			O_CTL_RegDst <= '1';
+			O_CTL_Jump <= '0';
+			O_CTL_Beq <= '0';
+			O_CTL_Bne <= '0';
+			O_CTL_MemRead <= '0';
+			O_CTL_MemtoReg <='0';
+			O_CTL_ALUOp <= "10";
+			O_CTL_MemWrite <='0';
+			O_CTL_ALUSrc <='0';
+			O_CTL_RegWrite <='1';
 		end if;
 		
 	-- beq:
 	-- opcode = 000100
 	-- aluop = 01
-		if I_DEC_Opcode = "000100" then
-			O_DEC_RegDst <= 'X';
-         O_DEC_Jump <= '0';
-         O_DEC_Beq <= '1';
-         O_DEC_Bne <= '0';
-         O_DEC_MemRead <= '0';
-         O_DEC_MemtoReg <= 'X';
-         O_DEC_ALUOp <= "01";
-         O_DEC_MemWrite <= '0';
-         O_DEC_ALUSrc <= '0';
-         O_DEC_RegWrite <= '0';
+		if I_CTL_Opcode = "000100" then
+			O_CTL_RegDst <= 'X';
+         O_CTL_Jump <= '0';
+         O_CTL_Beq <= '1';
+         O_CTL_Bne <= '0';
+         O_CTL_MemRead <= '0';
+         O_CTL_MemtoReg <= 'X';
+         O_CTL_ALUOp <= "01";
+         O_CTL_MemWrite <= '0';
+         O_CTL_ALUSrc <= '0';
+         O_CTL_RegWrite <= '0';
 		end if;	
 	
 	-- bne:
 	-- opcode = 000101
 	-- aluop = 01
-		if I_DEC_Opcode = "000101" then
-			O_DEC_RegDst <= 'X';
-         O_DEC_Jump <= '0';
-         O_DEC_Beq <= '0';
-         O_DEC_Bne <= '1';
-         O_DEC_MemRead <= '0';
-         O_DEC_MemtoReg <= 'X';
-         O_DEC_ALUOp <= "01";
-         O_DEC_MemWrite <= '0';
-         O_DEC_ALUSrc <= '0';
-         O_DEC_RegWrite <= '0';
+		if I_CTL_Opcode = "000101" then
+			O_CTL_RegDst <= 'X';
+         O_CTL_Jump <= '0';
+         O_CTL_Beq <= '0';
+         O_CTL_Bne <= '1';
+         O_CTL_MemRead <= '0';
+         O_CTL_MemtoReg <= 'X';
+         O_CTL_ALUOp <= "01";
+         O_CTL_MemWrite <= '0';
+         O_CTL_ALUSrc <= '0';
+         O_CTL_RegWrite <= '0';
 		end if;
 	
 	-- lw:
 	-- opcode = 100011
 	-- aluop = 00
-		if I_DEC_Opcode = "100011" then
-			O_DEC_RegDst <= '0';
-         O_DEC_Jump <= '0';
-         O_DEC_Beq <= '0';
-         O_DEC_Bne <= '0';
-         O_DEC_MemRead <= '1';
-         O_DEC_MemtoReg <= '1';
-         O_DEC_ALUOp <= "00";
-         O_DEC_MemWrite <= '0';
-         O_DEC_ALUSrc <= '1';
-         O_DEC_RegWrite <= '1';
+		if I_CTL_Opcode = "100011" then
+			O_CTL_RegDst <= '0';
+         O_CTL_Jump <= '0';
+         O_CTL_Beq <= '0';
+         O_CTL_Bne <= '0';
+         O_CTL_MemRead <= '1';
+         O_CTL_MemtoReg <= '1';
+         O_CTL_ALUOp <= "00";
+         O_CTL_MemWrite <= '0';
+         O_CTL_ALUSrc <= '1';
+         O_CTL_RegWrite <= '1';
 		end if;
 
 	-- sw:
 	-- opcode = 101011
 	-- aluop = 00
-		if I_DEC_Opcode = "101011" then
-			O_DEC_RegDst <= 'X';
-         O_DEC_Jump <= '0';
-         O_DEC_Beq <= '0';
-         O_DEC_Bne <= '0';
-         O_DEC_MemRead <= '0';
-         O_DEC_MemtoReg <= 'X';
-         O_DEC_ALUOp <= "00";
-         O_DEC_MemWrite <= '1';
-         O_DEC_ALUSrc <= '1';
-         O_DEC_RegWrite <= '0';
+		if I_CTL_Opcode = "101011" then
+			O_CTL_RegDst <= 'X';
+         O_CTL_Jump <= '0';
+         O_CTL_Beq <= '0';
+         O_CTL_Bne <= '0';
+         O_CTL_MemRead <= '0';
+         O_CTl_MemtoReg <= 'X';
+         O_CTL_ALUOp <= "00";
+         O_CTL_MemWrite <= '1';
+         O_CTL_ALUSrc <= '1';
+         O_CTL_RegWrite <= '0';
 		end if;
 		
 	-- j:
 	-- opcode = 000010
-		if I_DEC_Opcode = "000010" then
-			O_DEC_RegDst <= 'X';
-         O_DEC_Jump <= '1';
-         O_DEC_Beq <= '0';
-         O_DEC_Bne <= '0';
-         O_DEC_MemRead <= '0';
-         O_DEC_MemtoReg <= 'X';
-         O_DEC_ALUOp <= "XX";
-         O_DEC_MemWrite <= '0';
-         O_DEC_ALUSrc <= 'X';
-         O_DEC_RegWrite <= '0';
+		if I_CTL_Opcode = "000010" then
+			O_CTL_RegDst <= 'X';
+         O_CTL_Jump <= '1';
+         O_CTL_Beq <= '0';
+         O_CTL_Bne <= '0';
+         O_CTL_MemRead <= '0';
+         O_CTL_MemtoReg <= 'X';
+         O_CTL_ALUOp <= "XX";
+         O_CTL_MemWrite <= '0';
+         O_CTL_ALUSrc <= 'X';
+         O_CTL_RegWrite <= '0';
 		end if;
 	end if;
 	end process;
