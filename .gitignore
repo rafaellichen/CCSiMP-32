@@ -1,3 +1,6 @@
+*.gise
+*.xise
+*.ini
 *.prj
 *.html
 iseconfig
