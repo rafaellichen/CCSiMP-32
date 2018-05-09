@@ -1,12 +1,12 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
-use IEEE.textio.ALL;
+use STD.textio.ALL;
 
 entity ROM is
     Port ( I_ROM_EN : in  STD_LOGIC;
            I_ROM_ADDR : in  STD_LOGIC_VECTOR (31 downto 0);
-           O_ROM_ADDR : out  STD_LOGIC_VECTOR (31 downto 0));
+           O_ROM_DATA : out  STD_LOGIC_VECTOR (31 downto 0));
 end ROM;
 
 architecture Behavioral of ROM is

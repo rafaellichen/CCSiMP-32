@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "secureip" -o "/home/kiseki123/Documents/csc343-projects/Lab7/CCSiMP-32/ROM_Test_isim_beh.exe" -prj "/home/kiseki123/Documents/csc343-projects/Lab7/CCSiMP-32/ROM_Test_beh.prj" "work.ROM_Test" 

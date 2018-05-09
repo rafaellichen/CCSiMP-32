@@ -12,7 +12,7 @@ ARCHITECTURE behavior OF ROM_Test IS
     PORT(
          I_ROM_EN : IN  std_logic;
          I_ROM_ADDR : IN  std_logic_vector(31 downto 0);
-         O_ROM_ADDR : OUT  std_logic_vector(31 downto 0)
+         O_ROM_DATA : OUT  std_logic_vector(31 downto 0)
         );
     END COMPONENT;
     
@@ -22,7 +22,7 @@ ARCHITECTURE behavior OF ROM_Test IS
    signal I_ROM_ADDR : std_logic_vector(31 downto 0) := (others => '0');
 
  	--Outputs
-   signal O_ROM_ADDR : std_logic_vector(31 downto 0);
+   signal O_ROM_DATA : std_logic_vector(31 downto 0);
  
 BEGIN
  
@@ -30,7 +30,7 @@ BEGIN
    uut: ROM PORT MAP (
           I_ROM_EN => I_ROM_EN,
           I_ROM_ADDR => I_ROM_ADDR,
-          O_ROM_ADDR => O_ROM_ADDR
+          O_ROM_DATA => O_ROM_DATA
         );
  
 
@@ -41,7 +41,15 @@ BEGIN
       wait for 100 ns;
 
       -- insert stimulus here 
+		I_ROM_EN <= '1';
 		
+		wait for 20 ns;
+		
+		I_ROM_ADDR <= x"00000004";
+		
+		wait for 20ns ;
+		
+		I_ROM_ADDR <= x"00000005";
 
       wait;
    end process;
