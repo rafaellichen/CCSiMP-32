@@ -11,7 +11,7 @@ CCSiMP-32 (City College Simple MIPS Processor 32-bit), a MIPS compatible 32-bit 
 
 ### Rafael
 - [x] FSM.vhd
-- [ ] MUX3/5/32.vhd
+- [x] MUX3/5/32.vhd
 - [ ] DIV.vhd (Instruction divider)
 
 ### Baikeng
