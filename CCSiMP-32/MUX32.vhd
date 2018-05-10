@@ -15,7 +15,7 @@ begin
 	begin
 		if I_MUX32_CTL = '0' then
 			O_MUX32 <= I_MUX32_A;
-		elsif I_MUX5_CTL = '1' then
+		elsif I_MUX32_CTL = '1' then
 			O_MUX32 <= I_MUX32_B;
 		end if;
 	end process;

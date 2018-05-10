@@ -74,10 +74,16 @@ BEGIN
       -- hold reset state for 100 ns.
       wait for 100 ns;	
 
-      wait for <clock>_period*10;
-
       -- insert stimulus here 
-
+		I_MUX32_A <= x"FFFFFFFF";
+		I_MUX32_B <= x"AAAAAAAA";
+		wait for 20 ns;
+		
+		I_MUX32_CTL <= '1';
+		wait for 20 ns;
+		
+		I_MUX32_CTL <= '0';
+      wait;
       wait;
    end process;
 
