@@ -17,4 +17,5 @@ CCSiMP-32 (City College Simple MIPS Processor 32-bit), a MIPS compatible 32-bit 
 ### Baikeng
 - [x] ROM.vhd
 - [ ] CTL.vhd
+- [ ] ACU.vhd
 
