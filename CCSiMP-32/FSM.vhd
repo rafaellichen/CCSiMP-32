@@ -4,7 +4,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity FSM is
     Port ( I_FSM_CLK : in  STD_LOGIC;
            I_FSM_EN : in  STD_LOGIC;
-           I_FSM_END : in  STD_LOGIC;
+           I_FSM_INST : in  STD_LOGIC_VECTOR (31 downto 0);
            O_FSM_IF : out  STD_LOGIC;
            O_FSM_ID : out  STD_LOGIC;
            O_FSM_EX : out  STD_LOGIC;
@@ -15,7 +15,7 @@ end FSM;
 architecture Behavioral of FSM is
 	signal state : STD_LOGIC_VECTOR (2 downto 0) := "001";
 begin
-	process (I_FSM_CLK,I_FSM_EN,I_FSM_END)
+	process (I_FSM_CLK,I_FSM_EN,I_FSM_INST)
 	begin
 		-- IF: 001
 		-- ID: 010
@@ -25,7 +25,7 @@ begin
 		-- begin FSM
 		if rising_edge(I_FSM_CLK) and I_FSM_EN = '1' then
 			-- for end state
-			if I_FSM_END = '1' then
+			if I_FSM_INST = x"00000000" then
 				state <= "000";
 			end if;
 			-- begin 1st state: IF

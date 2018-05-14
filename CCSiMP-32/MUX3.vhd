@@ -30,21 +30,21 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity MUX3 is
-    Port ( I_MUX3_A : in  STD_LOGIC_VECTOR (2 downto 0);
-           I_MUX3_B : in  STD_LOGIC_VECTOR (2 downto 0);
-           I_MUX3_CTL : in  STD_LOGIC;
-           O_MUX3 : out  STD_LOGIC_VECTOR (2 downto 0));
+    Port ( I_MUX3_0 : in  STD_LOGIC_VECTOR (2 downto 0);
+           I_MUX3_1 : in  STD_LOGIC_VECTOR (2 downto 0);
+           I_MUX3_Sel : in  STD_LOGIC;
+           O_MUX3_Out : out  STD_LOGIC_VECTOR (2 downto 0));
 end MUX3;
 
 architecture Behavioral of MUX3 is
 
 begin
-	process (I_MUX3_CTL, I_MUX3_A, I_MUX3_B)
+	process (I_MUX3_Sel, I_MUX3_0, I_MUX3_1)
 	begin
-		if I_MUX3_CTL = '0' then
-			O_MUX3 <= I_MUX3_A;
-		elsif I_MUX3_CTL = '1' then
-			O_MUX3 <= I_MUX3_B;
+		if I_MUX3_Sel = '0' then
+			O_MUX3_Out <= I_MUX3_0;
+		elsif I_MUX3_Sel = '1' then
+			O_MUX3_Out <= I_MUX3_1;
 		end if;
 	end process;
 

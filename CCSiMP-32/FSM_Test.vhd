@@ -2,7 +2,7 @@
 -- Company: 
 -- Engineer:
 --
--- Create Date:   15:46:11 05/09/2018
+-- Create Date:   15:08:41 05/14/2018
 -- Design Name:   
 -- Module Name:   /home/student/Desktop/CPU/Lab7/CCSiMP-32/FSM_Test.vhd
 -- Project Name:  CCSiMP-32
@@ -43,7 +43,7 @@ ARCHITECTURE behavior OF FSM_Test IS
     PORT(
          I_FSM_CLK : IN  std_logic;
          I_FSM_EN : IN  std_logic;
-         I_FSM_END : IN  std_logic;
+         I_FSM_INST : IN  std_logic_vector(31 downto 0);
          O_FSM_IF : OUT  std_logic;
          O_FSM_ID : OUT  std_logic;
          O_FSM_EX : OUT  std_logic;
@@ -56,7 +56,7 @@ ARCHITECTURE behavior OF FSM_Test IS
    --Inputs
    signal I_FSM_CLK : std_logic := '0';
    signal I_FSM_EN : std_logic := '0';
-   signal I_FSM_END : std_logic := '0';
+   signal I_FSM_INST : std_logic_vector(31 downto 0) := (others => '0');
 
  	--Outputs
    signal O_FSM_IF : std_logic;
@@ -64,14 +64,14 @@ ARCHITECTURE behavior OF FSM_Test IS
    signal O_FSM_EX : std_logic;
    signal O_FSM_ME : std_logic;
    signal O_FSM_WB : std_logic;
- 
+
 BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
    uut: FSM PORT MAP (
           I_FSM_CLK => I_FSM_CLK,
           I_FSM_EN => I_FSM_EN,
-          I_FSM_END => I_FSM_END,
+          I_FSM_INST => I_FSM_INST,
           O_FSM_IF => O_FSM_IF,
           O_FSM_ID => O_FSM_ID,
           O_FSM_EX => O_FSM_EX,

@@ -41,30 +41,30 @@ ARCHITECTURE behavior OF MUX5_Test IS
  
     COMPONENT MUX5
     PORT(
-         I_MUX5_A : IN  std_logic_vector(4 downto 0);
-         I_MUX5_B : IN  std_logic_vector(4 downto 0);
-         I_MUX5_CTL : IN  std_logic;
-         O_MUX5 : OUT  std_logic_vector(4 downto 0)
+         I_MUX5_0 : IN  std_logic_vector(4 downto 0);
+         I_MUX5_1 : IN  std_logic_vector(4 downto 0);
+         I_MUX5_Sel : IN  std_logic;
+         O_MUX5_Out : OUT  std_logic_vector(4 downto 0)
         );
     END COMPONENT;
     
 
    --Inputs
-   signal I_MUX5_A : std_logic_vector(4 downto 0) := (others => '0');
-   signal I_MUX5_B : std_logic_vector(4 downto 0) := (others => '0');
-   signal I_MUX5_CTL : std_logic := '0';
+   signal I_MUX5_0 : std_logic_vector(4 downto 0) := (others => '0');
+   signal I_MUX5_1 : std_logic_vector(4 downto 0) := (others => '0');
+   signal I_MUX5_Sel : std_logic := '0';
 
  	--Outputs
-   signal O_MUX5 : std_logic_vector(4 downto 0);
+   signal O_MUX5_Out : std_logic_vector(4 downto 0);
  
 BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
    uut: MUX5 PORT MAP (
-          I_MUX5_A => I_MUX5_A,
-          I_MUX5_B => I_MUX5_B,
-          I_MUX5_CTL => I_MUX5_CTL,
-          O_MUX5 => O_MUX5
+          I_MUX5_0 => I_MUX5_0,
+          I_MUX5_1 => I_MUX5_1,
+          I_MUX5_Sel => I_MUX5_Sel,
+          O_MUX5_Out => O_MUX5_Out
         );
 
    -- Stimulus process
@@ -73,14 +73,14 @@ BEGIN
       -- hold reset state for 100 ns.
       wait for 100 ns;	
 		
-		I_MUX5_A <= "10101";
-		I_MUX5_B <= "01010";
+		I_MUX5_0 <= "10101";
+		I_MUX5_1 <= "01010";
 		wait for 20 ns;
 		
-		I_MUX5_CTL <= '1';
+		I_MUX5_Sel <= '1';
 		wait for 20 ns;
 		
-		I_MUX5_CTL <= '0';
+		I_MUX5_Sel <= '0';
 
       -- insert stimulus here 
 

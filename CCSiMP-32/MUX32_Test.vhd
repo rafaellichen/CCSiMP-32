@@ -41,30 +41,30 @@ ARCHITECTURE behavior OF MUX32_Test IS
  
     COMPONENT MUX32
     PORT(
-         I_MUX32_A : IN  std_logic_vector(31 downto 0);
-         I_MUX32_B : IN  std_logic_vector(31 downto 0);
-         I_MUX32_CTL : IN  std_logic;
-         O_MUX32 : OUT  std_logic_vector(31 downto 0)
+         I_MUX32_0 : IN  std_logic_vector(31 downto 0);
+         I_MUX32_1 : IN  std_logic_vector(31 downto 0);
+         I_MUX32_Sel : IN  std_logic;
+         O_MUX32_Out : OUT  std_logic_vector(31 downto 0)
         );
     END COMPONENT;
     
 
    --Inputs
-   signal I_MUX32_A : std_logic_vector(31 downto 0) := (others => '0');
-   signal I_MUX32_B : std_logic_vector(31 downto 0) := (others => '0');
-   signal I_MUX32_CTL : std_logic := '0';
+   signal I_MUX32_0 : std_logic_vector(31 downto 0) := (others => '0');
+   signal I_MUX32_1 : std_logic_vector(31 downto 0) := (others => '0');
+   signal I_MUX32_Sel : std_logic := '0';
 
  	--Outputs
-   signal O_MUX32 : std_logic_vector(31 downto 0);
+   signal O_MUX32_Out : std_logic_vector(31 downto 0);
  
 BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
    uut: MUX32 PORT MAP (
-          I_MUX32_A => I_MUX32_A,
-          I_MUX32_B => I_MUX32_B,
-          I_MUX32_CTL => I_MUX32_CTL,
-          O_MUX32 => O_MUX32
+          I_MUX32_0 => I_MUX32_0,
+          I_MUX32_1 => I_MUX32_1,
+          I_MUX32_Sel => I_MUX32_Sel,
+          O_MUX32_Out => O_MUX32_Out
         );
  
 
@@ -75,14 +75,14 @@ BEGIN
       wait for 100 ns;	
 
       -- insert stimulus here 
-		I_MUX32_A <= x"FFFFFFFF";
-		I_MUX32_B <= x"AAAAAAAA";
+		I_MUX32_0 <= x"FFFFFFFF";
+		I_MUX32_1 <= x"AAAAAAAA";
 		wait for 20 ns;
 		
-		I_MUX32_CTL <= '1';
+		I_MUX32_Sel <= '1';
 		wait for 20 ns;
 		
-		I_MUX32_CTL <= '0';
+		I_MUX32_Sel <= '0';
       wait;
       wait;
    end process;

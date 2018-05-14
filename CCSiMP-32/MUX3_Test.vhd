@@ -41,31 +41,31 @@ ARCHITECTURE behavior OF MUX3_Test IS
  
     COMPONENT MUX3
     PORT(
-         I_MUX3_A : IN  std_logic_vector(2 downto 0);
-         I_MUX3_B : IN  std_logic_vector(2 downto 0);
-         I_MUX3_CTL : IN  std_logic;
-         O_MUX3 : OUT  std_logic_vector(2 downto 0)
+         I_MUX3_0 : IN  std_logic_vector(2 downto 0);
+         I_MUX3_1 : IN  std_logic_vector(2 downto 0);
+         I_MUX3_Sel : IN  std_logic;
+         O_MUX3_Out : OUT  std_logic_vector(2 downto 0)
         );
     END COMPONENT;
     
 
    --Inputs
-   signal I_MUX3_A : std_logic_vector(2 downto 0) := (others => '0');
-   signal I_MUX3_B : std_logic_vector(2 downto 0) := (others => '0');
-   signal I_MUX3_CTL : std_logic := '0';
+   signal I_MUX3_0 : std_logic_vector(2 downto 0) := (others => '0');
+   signal I_MUX3_1 : std_logic_vector(2 downto 0) := (others => '0');
+   signal I_MUX3_Sel : std_logic := '0';
 
  	--Outputs
-   signal O_MUX3 : std_logic_vector(2 downto 0);
+   signal O_MUX3_Out : std_logic_vector(2 downto 0);
    
  
 BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
    uut: MUX3 PORT MAP (
-          I_MUX3_A => I_MUX3_A,
-          I_MUX3_B => I_MUX3_B,
-          I_MUX3_CTL => I_MUX3_CTL,
-          O_MUX3 => O_MUX3
+          I_MUX3_0 => I_MUX3_0,
+          I_MUX3_1 => I_MUX3_1,
+          I_MUX3_Sel => I_MUX3_Sel,
+          O_MUX3_Out => O_MUX3_Out
         );
 
    -- Stimulus process
@@ -75,14 +75,14 @@ BEGIN
       wait for 100 ns;	
 
       -- insert stimulus here 
-		I_MUX3_A <= "101";
-		I_MUX3_B <= "110";
+		I_MUX3_0 <= "101";
+		I_MUX3_1 <= "110";
 		wait for 20 ns;
 		
-		I_MUX3_CTL <= '1';
+		I_MUX3_Sel <= '1';
 		wait for 20 ns;
 		
-		I_MUX3_CTL <= '0';
+		I_MUX3_Sel <= '0';
       wait;
    end process;
 
