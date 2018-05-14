@@ -1,3 +1,5 @@
+*.jhd
+*.schlog
 *.exe
 *.wdb
 *.log
