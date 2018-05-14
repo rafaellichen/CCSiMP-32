@@ -9,7 +9,7 @@ CCSiMP-32 (City College Simple MIPS Processor 32-bit), a MIPS compatible 32-bit 
 - [x] MUX3/5/32.vhd
 - [x] DIV.vhd (Instruction divider)
 - [x] SEXT.vhd (Sign extension)
-- [ ] REG.vhd
+- [x] REG.vhd
 
 ### Baikeng	
 - [x] ROM.vhd
