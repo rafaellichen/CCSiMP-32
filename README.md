@@ -19,4 +19,5 @@ CCSiMP-32 (City College Simple MIPS Processor 32-bit), a MIPS compatible 32-bit 
 - [x] LSH28.vhd
 - [x] ADD32.vhd
 - [x] ADD4.vhd
-- [ ] RAM.vhd
+- [x] RAM.vhd
+- [ ] ALU.vhd
