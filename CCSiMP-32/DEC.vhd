@@ -158,6 +158,7 @@ begin
          O_DEC_ALUSrc <= 'X';
          O_DEC_RegWrite <= '0';
 		end if;
+		
 	end if;
 	end process;
 

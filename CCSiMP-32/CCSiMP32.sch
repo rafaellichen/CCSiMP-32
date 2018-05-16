@@ -46,6 +46,10 @@
         <signal name="XLXN_114(1:0)" />
         <signal name="XLXN_115" />
         <signal name="XLXN_116" />
+        <signal name="XLXN_119" />
+        <signal name="XLXN_120" />
+        <signal name="XLXN_124" />
+        <signal name="XLXN_125" />
         <blockdef name="ACU">
             <timestamp>2018-5-14T20:30:13</timestamp>
             <rect width="400" x="64" y="-128" height="128" />
@@ -280,7 +284,7 @@
             <blockpin signalname="XLXN_56(31:0)" name="O_ADD1_Out(31:0)" />
         </block>
         <block symbolname="ROM" name="XLXI_8">
-            <blockpin name="I_ROM_EN" />
+            <blockpin signalname="XLXN_119" name="I_ROM_EN" />
             <blockpin signalname="XLXN_1(31:0)" name="I_ROM_ADDR(31:0)" />
             <blockpin signalname="XLXN_2(31:0)" name="O_ROM_DATA(31:0)" />
         </block>
@@ -329,7 +333,7 @@
             <blockpin signalname="XLXN_92(31:0)" name="O_ADD3_Out(31:0)" />
         </block>
         <block symbolname="ALU" name="XLXI_15">
-            <blockpin name="I_ALU_EN" />
+            <blockpin signalname="XLXN_125" name="I_ALU_EN" />
             <blockpin signalname="XLXN_95(3:0)" name="I_ALU_CTL(3:0)" />
             <blockpin signalname="XLXN_100(31:0)" name="I_ALU_A(31:0)" />
             <blockpin signalname="XLXN_99(31:0)" name="I_ALU_B(31:0)" />
@@ -390,14 +394,14 @@
             <blockpin name="I_FSM_CLK" />
             <blockpin name="I_FSM_EN" />
             <blockpin name="I_FSM_INST(31:0)" />
-            <blockpin name="O_FSM_IF" />
-            <blockpin name="O_FSM_ID" />
-            <blockpin name="O_FSM_EX" />
+            <blockpin signalname="XLXN_119" name="O_FSM_IF" />
+            <blockpin signalname="XLXN_120" name="O_FSM_ID" />
+            <blockpin signalname="XLXN_125" name="O_FSM_EX" />
             <blockpin name="O_FSM_ME" />
             <blockpin name="O_FSM_WB" />
         </block>
         <block symbolname="DEC" name="XLXI_65">
-            <blockpin name="I_DEC_EN" />
+            <blockpin signalname="XLXN_120" name="I_DEC_EN" />
             <blockpin signalname="XLXN_112(5:0)" name="I_DEC_Opcode(5:0)" />
             <blockpin signalname="XLXN_12" name="O_DEC_RegDst" />
             <blockpin signalname="XLXN_105" name="O_DEC_Jump" />
@@ -720,6 +724,27 @@
             <wire x2="3424" y1="704" y2="704" x1="2144" />
             <wire x2="3424" y1="704" y2="1776" x1="3424" />
             <wire x2="3424" y1="1776" y2="1776" x1="3376" />
+        </branch>
+        <branch name="XLXN_119">
+            <wire x2="592" y1="240" y2="240" x1="528" />
+            <wire x2="592" y1="240" y2="1024" x1="592" />
+            <wire x2="704" y1="1024" y2="1024" x1="592" />
+        </branch>
+        <branch name="XLXN_120">
+            <wire x2="576" y1="304" y2="304" x1="528" />
+            <wire x2="576" y1="208" y2="304" x1="576" />
+            <wire x2="1376" y1="208" y2="208" x1="576" />
+            <wire x2="1376" y1="208" y2="512" x1="1376" />
+            <wire x2="1408" y1="512" y2="512" x1="1376" />
+        </branch>
+        <branch name="XLXN_125">
+            <wire x2="576" y1="368" y2="368" x1="528" />
+            <wire x2="576" y1="368" y2="432" x1="576" />
+            <wire x2="688" y1="432" y2="432" x1="576" />
+            <wire x2="688" y1="432" y2="1216" x1="688" />
+            <wire x2="1968" y1="1216" y2="1216" x1="688" />
+            <wire x2="1968" y1="1216" y2="1776" x1="1968" />
+            <wire x2="2880" y1="1776" y2="1776" x1="1968" />
         </branch>
     </sheet>
 </drawing>
