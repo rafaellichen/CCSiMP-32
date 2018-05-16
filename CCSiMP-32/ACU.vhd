@@ -27,8 +27,9 @@ architecture Behavioral of ACU is
 -- lw					00
 -- sw					00
 -- beq				01
+-- bne				11
 -- R-type			10
--- J-type			11
+-- J-type			XX
 
 begin
 	process(I_ACU_ALUOp, I_ACU_Funct)
@@ -38,9 +39,14 @@ begin
 			O_ACU_CTL <= "0010";
 		end if;
 
-		-- beq/bne
+		-- beq
 		if I_ACU_ALUOp = "01" then
 			O_ACU_CTL <= "0110";
+		end if;
+		
+		-- bne;
+		if I_ACU_ALUop = "11" then
+			O_ACU_CTL <= "0111";
 		end if;
 
 		-- addu

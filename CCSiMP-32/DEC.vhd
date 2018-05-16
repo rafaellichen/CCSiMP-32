@@ -25,7 +25,7 @@ begin
 
 	-- addu:
 	-- opcode = 000000
-	-- aluop = 10
+	-- aluop = 010
 		if I_DEC_Opcode = "000000" then
 			O_DEC_RegDst <= '1';
 			O_DEC_Jump <= '0';
@@ -41,7 +41,7 @@ begin
 		
 	-- addi:
 	-- opcode = 001000
-	-- aluop = 10
+	-- aluop = 010
 		if I_DEC_Opcode = "001000" then
 			O_DEC_RegDst <= '1';
 			O_DEC_Jump <= '0';
@@ -57,7 +57,7 @@ begin
 		
 	-- addiu:
 	-- opcode = 001001
-	-- aluop = 10
+	-- aluop = 010
 		if I_DEC_Opcode = "001001" then
 			O_DEC_RegDst <= '1';
 			O_DEC_Jump <= '0';
@@ -73,7 +73,7 @@ begin
 		
 	-- beq:
 	-- opcode = 000100
-	-- aluop = 01
+	-- aluop = 001
 		if I_DEC_Opcode = "000100" then
 			O_DEC_RegDst <= 'X';
          O_DEC_Jump <= '0';
@@ -89,7 +89,7 @@ begin
 	
 	-- bne:
 	-- opcode = 000101
-	-- aluop = 01
+	-- aluop = 001
 		if I_DEC_Opcode = "000101" then
 			O_DEC_RegDst <= 'X';
          O_DEC_Jump <= '0';
@@ -105,7 +105,7 @@ begin
 	
 	-- lw:
 	-- opcode = 100011
-	-- aluop = 00
+	-- aluop = 000
 		if I_DEC_Opcode = "100011" then
 			O_DEC_RegDst <= '0';
          O_DEC_Jump <= '0';
@@ -121,7 +121,7 @@ begin
 
 	-- sw:
 	-- opcode = 101011
-	-- aluop = 00
+	-- aluop = 000
 		if I_DEC_Opcode = "101011" then
 			O_DEC_RegDst <= 'X';
          O_DEC_Jump <= '0';
