@@ -1,3 +1,4 @@
+*.vhf
 *.schlog
 *.sym
 *.vhi
@@ -10,6 +11,7 @@
 *.log
 *.xmsgs
 *.cmd
+sch2HdlBatchFile
 isim
 *.gise
 *.xise
