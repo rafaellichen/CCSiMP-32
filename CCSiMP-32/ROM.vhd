@@ -37,11 +37,7 @@ begin
 	process (I_ROM_EN, I_ROM_ADDR)
 	begin
 		if I_ROM_EN = '1' then
-			if to_integer(unsigned(I_ROM_ADDR)) > 16 then
-				O_ROM_DATA <= x"00000000";
-			else
-				O_ROM_DATA <= mem(to_integer(unsigned(I_ROM_ADDR)));
-			end if;
+			O_ROM_DATA <= mem(to_integer(unsigned(I_ROM_ADDR)));
 		end if;
 	end process;
 

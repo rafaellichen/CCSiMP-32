@@ -25,9 +25,9 @@ begin
 			if I_REG_WE = '1' then
 				regs(to_integer(unsigned(I_REG_SEL_RD))) <= I_REG_DATA_RD;
 			end if;
-			O_REG_DATA_A <= regs(to_integer(unsigned(I_REG_SEL_RS)));
-			O_REG_DATA_B <= regs(to_integer(unsigned(I_REG_SEL_RT)));
 		end if;
+		O_REG_DATA_A <= regs(to_integer(unsigned(I_REG_SEL_RS)));
+		O_REG_DATA_B <= regs(to_integer(unsigned(I_REG_SEL_RT)));
 	end process;
 
 end Behavioral;
