@@ -28,6 +28,13 @@ begin
 			if I_FSM_INST = x"00000000" then
 				state <= "000";
 			end if;
+			if state = "000" then
+				O_FSM_IF <= '0';
+				O_FSM_ID <= '0';
+				O_FSM_EX <= '0';
+				O_FSM_ME <= '0';
+				O_FSM_WB <= '0';
+			end if;
 			-- begin 1st state: IF
 			if state = "001" then
 				O_FSM_IF <= '1'; -- Fetch instruction
