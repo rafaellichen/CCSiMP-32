@@ -1,3 +1,8 @@
+*.schlog
+*.sym
+*.vhi
+*.jhd
+*.sch
 *.cmd_log
 *.spl
 *.exe
