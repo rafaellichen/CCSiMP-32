@@ -103,7 +103,7 @@ begin
 			O_DEC_Branch <= '1';
          O_DEC_MemRead <= '0';
          O_DEC_MemtoReg <= 'X';
-         O_DEC_ALUOp <= "01";
+         O_DEC_ALUOp <= "11";
          O_DEC_MemWrite <= '0';
          O_DEC_ALUSrc <= '0';
          O_DEC_RegWrite <= '0';

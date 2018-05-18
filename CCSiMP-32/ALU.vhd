@@ -24,18 +24,18 @@ begin
 				if (I_ALU_A - I_ALU_B) = x"00000000" then
 					-- beq
 					if I_ALU_CTL = "0110" then
-						O_ALU_Zero <= '0';
+						O_ALU_Zero <= '1';
 					-- bne
 					elsif I_ALU_CTL = "0111" then
-						O_ALU_Zero <= '1';
+						O_ALU_Zero <= '0';
 					end if;
 				else
 					-- beq
 					if I_ALU_CTL = "0110" then
-						O_ALU_Zero <= '1';
+						O_ALU_Zero <= '0';
 					-- bne
 					elsif I_ALU_CTL = "0111" then
-						O_ALU_Zero <= '0';
+						O_ALU_Zero <= '1';
 					end if;
 				end if;	
 			end if;
