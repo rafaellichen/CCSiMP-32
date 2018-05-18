@@ -14,16 +14,17 @@ end RAM;
 architecture Behavioral of RAM is
 
 	type buf32x256 is array (0 to 255) of STD_LOGIC_VECTOR (31 downto 0);
-	signal mem : buf32x256 := (others => x"00000000");
+	signal ram : buf32x256 := (others => x"00000000");
+	signal temp : std_logic_vector(31 downto 0) := x"00000000";
 	
 begin
 	process (I_RAM_EN, I_RAM_RE, I_RAM_WE, I_RAM_ADDR)
 	begin
 		if I_RAM_EN = '1' then
 			if I_RAM_RE = '1' then
-					O_RAM_DATA <= mem(to_integer(unsigned(I_RAM_ADDR)));
+				O_RAM_DATA <= ram(to_integer(unsigned(I_RAM_ADDR)));
 			elsif I_RAM_WE = '1' then
-				mem(to_integer(unsigned(I_RAM_ADDR))) <= I_RAM_DATA;
+				ram(to_integer(unsigned(I_RAM_ADDR))) <= I_RAM_DATA;
 			end if;
 		end if;
 	end process;

@@ -25,9 +25,9 @@ begin
 		-- begin FSM
 		if rising_edge(I_FSM_CLK) and I_FSM_EN = '1' then
 			-- for end state
-			if I_FSM_INST = x"00000000" then
-				state <= "000";
-			end if;
+			-- if I_FSM_INST = x"00000000" then
+			-- 	state <= "000";
+			-- end if;
 			if state = "000" then
 				O_FSM_IF <= '0';
 				O_FSM_ID <= '0';

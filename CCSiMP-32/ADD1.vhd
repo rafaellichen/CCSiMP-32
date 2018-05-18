@@ -9,7 +9,7 @@ end ADD1;
 
 architecture Behavioral of ADD1 is
 
-	signal count : STD_LOGIC_VECTOR (3 downto 0) := "0001";
+	signal count : STD_LOGIC_VECTOR (3 downto 0) := "0100";
 
 begin
 	O_ADD1_Out <= I_ADD1_A + count;
