@@ -14,6 +14,7 @@ end FSM;
 
 architecture Behavioral of FSM is
 	signal state : STD_LOGIC_VECTOR (2 downto 0) := "001";
+	
 begin
 	process (I_FSM_CLK,I_FSM_EN,I_FSM_INST)
 	begin
@@ -25,17 +26,15 @@ begin
 		-- begin FSM
 		if rising_edge(I_FSM_CLK) and I_FSM_EN = '1' then
 			-- for end state
-			-- if I_FSM_INST = x"00000000" then
-			-- 	state <= "000";
-			-- end if;
-			if state = "000" then
+			if I_FSM_INST = "00000000000000000000000000000000" then
+				state <= "000";
 				O_FSM_IF <= '0';
 				O_FSM_ID <= '0';
 				O_FSM_EX <= '0';
 				O_FSM_ME <= '0';
 				O_FSM_WB <= '0';
-			end if;
 			-- begin 1st state: IF
+			else
 			if state = "001" then
 				O_FSM_IF <= '1'; -- Fetch instruction
 				O_FSM_ID <= '0';
@@ -75,6 +74,7 @@ begin
 				O_FSM_ME <= '0';
 				O_FSM_WB <= '1'; -- write value from memory to register
 				state <= "001";
+			end if;
 			end if;
 		end if;
 	end process;
