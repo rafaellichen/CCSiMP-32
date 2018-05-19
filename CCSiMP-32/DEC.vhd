@@ -79,13 +79,13 @@ begin
 	-- opcode = 000100
 	-- aluop = 01
 		if I_DEC_Opcode = "000100" then
-			O_DEC_RegDst <= 'X';
+			O_DEC_RegDst <= '0';
          O_DEC_Jump <= '0';
          -- O_DEC_Beq <= '0';
 			-- O_DEC_Bne <= '0';
 			O_DEC_Branch <= '1';
          O_DEC_MemRead <= '0';
-         O_DEC_MemtoReg <= 'X';
+         O_DEC_MemtoReg <= '0';
          O_DEC_ALUOp <= "01";
          O_DEC_MemWrite <= '0';
          O_DEC_ALUSrc <= '0';
@@ -96,13 +96,13 @@ begin
 	-- opcode = 000101
 	-- aluop = 11
 		if I_DEC_Opcode = "000101" then
-			O_DEC_RegDst <= 'X';
+			O_DEC_RegDst <= '0';
          O_DEC_Jump <= '0';
          -- O_DEC_Beq <= '0';
 			-- O_DEC_Bne <= '0';
 			O_DEC_Branch <= '1';
          O_DEC_MemRead <= '0';
-         O_DEC_MemtoReg <= 'X';
+         O_DEC_MemtoReg <= '0';
          O_DEC_ALUOp <= "11";
          O_DEC_MemWrite <= '0';
          O_DEC_ALUSrc <= '0';
@@ -146,16 +146,16 @@ begin
 	-- j:
 	-- opcode = 000010
 		if I_DEC_Opcode = "000010" then
-			O_DEC_RegDst <= 'X';
+			O_DEC_RegDst <= '0';
          O_DEC_Jump <= '1';
          -- O_DEC_Beq <= '0';
 			-- O_DEC_Bne <= '0';
 			O_DEC_Branch <= '0';
          O_DEC_MemRead <= '0';
-         O_DEC_MemtoReg <= 'X';
-         O_DEC_ALUOp <= "XX";
+         O_DEC_MemtoReg <= '0';
+         -- O_DEC_ALUOp <= "XX";
          O_DEC_MemWrite <= '0';
-         O_DEC_ALUSrc <= 'X';
+         O_DEC_ALUSrc <= '0';
          O_DEC_RegWrite <= '0';
 		end if;
 		
